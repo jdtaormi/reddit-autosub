@@ -7,7 +7,7 @@ TABS_TO_JOIN := 12
 CSV := "C:\subreddits.csv"
 
 ; Hotkeys
-#f10::Pause; Pause/resume the script
+#f10::Pause ; Pause/resume the script
 #f12::ExitApp ; Exit the script
 
 ; Count total subreddits
