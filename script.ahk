@@ -3,11 +3,13 @@ SetTitleMatchMode 2
 
 ; Set your variables
 BROWSER := "Brave"
-TABS_TO_JOIN := 12
+TABS_TO_JOIN := 11
 CSV := "C:\subreddits.csv"
+SHORT_SLEEP := 500 ; Short sleep length
+LONG_SLEEP := 4000 ; Long sleep length
 
 ; Hotkeys
-#f10::Pause ; Pause/resume the script
+#f10::Pause ; Pause the script, use system tray icon to resume
 #f12::ExitApp ; Exit the script
 
 ; Count total subreddits
@@ -39,25 +41,25 @@ Loop Read CSV
     }
 
     WinActivate BROWSER
-    Sleep 300
+    Sleep SHORT_SLEEP
 
     ToolTip "Processing: " subreddit "`n" current " / " total
 
     ; Focus address bar
     Send "^l"
-    Sleep 300
+    Sleep SHORT_SLEEP
 
     ; Navigate to subreddit
     Send url
     Send "{Enter}"
-    Sleep 2000
+    Sleep LONG_SLEEP
 
     ; Check if already joined and skip
     Send "^a"
-    Sleep 300
+    Sleep SHORT_SLEEP
     Send "^c"
     ClipWait(2)
-    Sleep 300
+    Sleep SHORT_SLEEP
 
     z := A_Clipboard
 
@@ -69,10 +71,10 @@ Loop Read CSV
     ; Navigate to Join button
     Loop TABS_TO_JOIN
         Send "{Tab}"
-    Sleep 300
+    Sleep SHORT_SLEEP
     Send "{Enter}"
 
-    Sleep 2000
+    Sleep LONG_SLEEP
 }
 
 ; Exit on completion

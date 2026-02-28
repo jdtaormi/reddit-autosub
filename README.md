@@ -6,7 +6,7 @@ An AutoHotKey v2 script to automate batch subscription to subreddits.
 - Accepts a single-column CSV list of subreddits
 - Tooltip displays current progress in list
 - Checks if user is already a member of the subreddit before joining
-- Pause, resume, and exit hotkeys
+- Pause and exit hotkeys
 - Script exits on completion
 
 **NOTE** This script will **NOT** work:
@@ -16,7 +16,7 @@ An AutoHotKey v2 script to automate batch subscription to subreddits.
 
 ## Hotkeys
 
-- Pause / Resume script - Win+F10
+- Pause script - Win+F10 (Use system tray icon to resume)
 - Exit script - Win+F12 
 
 ## Configuration
